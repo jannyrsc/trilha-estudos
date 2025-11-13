@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMULADOR DE SALARIO</title>
+</head>
+<body>
+    <script>
+        var salario = parseFloat(window.prompt("Qual é o seu salário bruto?"))
+        var bonus = Number(window.prompt("Quantos bônus de funcionário do mês, você ganhou esse ano?"))
+        var salarionovo = salario + (150*bonus)
+
+        var status = "";
+
+        if(salarionovo>3000){
+            status = "Salário de Gerente"
+        }else{
+            status = "Salário de Analista"
+        }
+
+        var salarionovoformatado = salarionovo.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+        })
+
+         window.alert(`Seu novo salário é ${salarionovoformatado}. Você tem um ${status}`)
+    </script>
+</body>
+</html>
