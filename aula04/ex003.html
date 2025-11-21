@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições Países</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1>Sistema de Nacionalidade</h1>
+    Nacionalidade: <input type="text" name="txtn1" id="txtn1">
+    <input type="button" value="Verificar" onclick="descobrir()">
+    <div id="res"></div>
+</body>
+<script>
+    function descobrir(){
+        var txtn1 = window.document.querySelector('input#txtn1');
+        var res = window.document.querySelector('div#res');
+        var nac = txtn1.value;
+        
+        res.innerHTML = ''; 
+
+        res.innerHTML = `Sua nacionalidade é ${nac}.`;
+
+        var nacComparacao = nac.trim().toLowerCase(); 
+
+
+        if(nacComparacao === 'brasileiro'){
+            res.innerHTML += `<p>Você é brasileiro!</p>`;
+        } else {
+            res.innerHTML += `<p> Você é estrangeiro!</p>`;
+        }
+        
+    }
+</script>
+</html>
